@@ -16,7 +16,8 @@ public class Main {
         int userOptions =0;
         do{
 
-        System.out.println("Select from the options \n1. Sign Up \n2. Add new Role \n3. Add Role to User \n4. Login \n5. List Users with their role");
+        System.out.println("Select from the options " +
+                "\n1. Sign Up \n2. Add new Role \n3. Add Role to User \n4. Login \n5. List Users with their role \n6. List Autors");
             userOptions = keyBord.nextInt();
             keyBord.nextLine();
             String yesOrNo ="";
@@ -72,8 +73,6 @@ public class Main {
                     }
                 }
 
-
-
                 break;
 
             case 4 : // Login
@@ -99,9 +98,20 @@ public class Main {
                 }
                 break;
 
+
+            case 6 : // Show list of Users with Their role
+
+                for (Role allMyRole :allRole){
+                    System.out.println("Users: " + allMyRole.getId() + allMyRole.getName());
+                    for (Role myRoles :allRole){
+                        System.out.println("Role Id: " + myRoles.getId() + " Role Name: " + myRoles.getName());
+                    }
+                }
+                break;
+
         }
 
-        }while(userOptions!=6);
+        }while(userOptions!=7);
     }
 
     private static Role findRoleBy(long roleId, ArrayList<Role>lookHere) {
