@@ -6,10 +6,17 @@ public class User {
     private  long id;
     private String userName;
     private String password;
+    private String role;
     private ArrayList<Role>allRoles;
 
     public User(){
         allRoles = new ArrayList<>();
+    }
+
+    public User(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+        this.allRoles = allRoles;
     }
 
     public long getId() {
@@ -34,6 +41,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public ArrayList<Role> getAllRoles() {
